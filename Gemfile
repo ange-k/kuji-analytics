@@ -16,6 +16,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'whenever', require: false
 gem 'nokogiri'
+gem 'poltergeist'
+gem 'capybara'
 
 # user関連処理
 # gem 'devise'

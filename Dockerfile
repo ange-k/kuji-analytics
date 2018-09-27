@@ -38,6 +38,11 @@ RUN wget https://github.com/progrium/entrykit/releases/download/v${ENTRYKIT_VERS
   && chmod +x /bin/entrykit \
   && entrykit --symlink
 
+RUN wget -O /tmp/phantomjs-2.1.1-linux-x86_64.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
+  && bzip2 -dc /tmp/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar xvf - \
+  && mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /bin \
+  && chmod +x /bin/phantomjs
+
 RUN mkdir /app
 
 WORKDIR /app
