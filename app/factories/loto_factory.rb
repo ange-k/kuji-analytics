@@ -1,0 +1,3 @@
+class LotoFactory
+
+end
