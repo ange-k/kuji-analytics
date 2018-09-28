@@ -1,4 +1,6 @@
 class LotoFactory
+  attr_reader :save
+
   def initialize(list)
     # 分解
     @unsave = []
@@ -17,6 +19,12 @@ class LotoFactory
           @save.push({ item: elm, url: loto_data[:link] })
         end
       end
+    end
+  end
+
+  def unsave
+    @unsave.group_by do |node|
+      node[:url]
     end
   end
 
