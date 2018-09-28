@@ -22,6 +22,8 @@ namespace :scraping do
         anker_list.push anker[:href]
       end
     end
-    p LinkAnalyzeService.analyze(anker_list)
+    loto_url_list = LinkAnalyzeService.analyze(anker_list)
+    factory = LotoFactory.new(loto_url_list)
+    binding.pry
   end
 end
