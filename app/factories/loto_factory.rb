@@ -9,7 +9,7 @@ class LotoFactory
       number = loto_data[:data]
       type = loto_data[:type]
       range = parse(number)
-      
+
       range.each do |number|
         type_number = Loto.cnv_type_number(type)
         elm = Loto.find_by(number: number, type_number: type_number)
@@ -29,7 +29,7 @@ class LotoFactory
   end
 
   private
-  
+
   def parse(number)
     if number.include?('_')
       str = number.split('_')
