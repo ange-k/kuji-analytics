@@ -1,4 +1,4 @@
-lock '3.9.1'
+lock '3.11.0'
 
 set :repo_url,        'git@github.com:angelica-keiskei/kuji-analytics.git'
 set :application,     'kuji-analytics'
@@ -19,7 +19,7 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :rbenv_type, :system
-set :rbenv_path, '/usr/local/rbenv'
+set :rbenv_path, '/opt/rbenv'
 set :rbenv_ruby, File.read('.ruby-version').strip
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w[rake gem bundle ruby rails]
@@ -34,8 +34,8 @@ set :linked_dirs, fetch(:linked_dirs, []).push(
 )
 set :linked_files, fetch(:linked_files, []).push(
     'config/database.yml',
-    'config/secrets.yml',
-    '.env'
+#    'config/secrets.yml',
+#    '.env'
 )
 set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 
