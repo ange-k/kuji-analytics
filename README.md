@@ -1,7 +1,7 @@
 # kuji-analytics
 くじ解析
 
-#デプロイ
+# デプロイ
 - [cap3](https://morizyun.github.io/ruby/rails-capistrano3-deploy-rbenv-puma.html)  
 - [mysql](https://qiita.com/toshihirock/items/c5933d3628c7d4e81ffa)  
 dbは作る必要があります
