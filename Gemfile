@@ -8,25 +8,13 @@ end
 gem 'rails', '~> 5.1.6'
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 gem 'puma', '~> 3.7'
-#gem 'sass-rails', '~> 5.0'
-#gem 'uglifier', '>= 1.3.0'
-#gem 'haml-rails'
-#gem 'erb2haml'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'whenever', require: false
 gem 'nokogiri'
 gem 'poltergeist'
 gem 'capybara'
-
-# user関連処理
-# gem 'devise'
-# gem 'cancancan'
-# gem 'rails_admin'
-
-# bootstrap
-# gem 'bootstrap', '~> 4.1.1'
-# gem 'jquery-rails'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-rails'
