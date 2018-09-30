@@ -12,5 +12,6 @@ class CreateUnits < ActiveRecord::Migration[5.1]
     end
 
     add_index :units, [:number, :type_number], :name => 'target_units_idx'
+    add_index :units, [:number, :type_number, :unit], :name => 'units_idx_unique', unique: true
   end
 end

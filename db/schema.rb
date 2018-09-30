@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20180930121315) do
     t.datetime "updated_at", null: false
     t.index ["day"], name: "index_units_on_day"
     t.index ["month"], name: "index_units_on_month"
+    t.index ["number", "type_number", "unit"], name: "units_idx_unique", unique: true
     t.index ["number", "type_number"], name: "target_units_idx"
     t.index ["year"], name: "index_units_on_year"
   end
