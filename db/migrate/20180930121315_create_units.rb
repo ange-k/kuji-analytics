@@ -8,6 +8,8 @@ class CreateUnits < ActiveRecord::Migration[5.1]
       t.integer :year, null: false, index: true     # 抽選年
       t.integer :month, null: false, index: true    # 抽選月
       t.integer :day, null: false, index: true      # 抽選日
+      t.string  :old_date, null: false, index: true # 旧暦
+      t.string  :rokuyou, null: false, index: true  # 六曜
       t.timestamps
     end
 
