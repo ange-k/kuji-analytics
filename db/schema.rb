@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180930121315) do
+ActiveRecord::Schema.define(version: 20181110125626) do
 
   create_table "analyses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "number", null: false
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20180930121315) do
     t.integer "year", null: false
     t.integer "month", null: false
     t.integer "day", null: false
-    t.string "old_date", null: false
-    t.string "rokuyou", null: false
+    t.string "old_date"
+    t.string "rokuyou"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["day"], name: "index_units_on_day"

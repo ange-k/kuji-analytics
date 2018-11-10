@@ -11,4 +11,13 @@ dbは作る必要があります
 rootで作業するの忘れないよう.
 
 - [cap3/nginx](https://qiita.com/himatani/items/3d4293b964255b774769)
-- [node](https://qiita.com/azusanakano/items/771dc9919f347de061d7)
+- [node](https://qiita.com/azusanakano/items/771dc9919f347de061d7)  
+nodeはこっちのほうが良いかも
+- [node](https://qiita.com/you21979@github/items/4c9c382b9536effc590d)
+
+## おまけ
+Deviceを入れている場合、別途初期化が必要
+- [device](https://hacknote.jp/archives/7992/)
+
+Uglifierが入っている場合、別途初期化が必要
+- [Uglifier](https://qiita.com/Thort/items/18c44604aba65303c221)
