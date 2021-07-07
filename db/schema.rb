@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180928022936) do
+ActiveRecord::Schema.define(version: 20181110125626) do
+
+  create_table "analyses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "number", null: false
+    t.integer "pair", null: false
+    t.integer "type_number", null: false
+    t.integer "total", default: 0, null: false
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["month"], name: "index_analyses_on_month"
+    t.index ["number", "pair", "type_number", "month"], name: "target_num_month_idx"
+    t.index ["number", "pair", "type_number", "year", "month"], name: "num_unique_idx"
+    t.index ["number", "pair", "type_number"], name: "target_num_pair_idx"
+    t.index ["number", "pair"], name: "target_num_pair_all_idx"
+    t.index ["year"], name: "index_analyses_on_year"
+  end
 
   create_table "lotos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "number", null: false
@@ -22,6 +39,27 @@ ActiveRecord::Schema.define(version: 20180928022936) do
     t.datetime "updated_at", null: false
     t.index ["date"], name: "index_lotos_on_date"
     t.index ["number", "type_number"], name: "target_loto_idx", unique: true
+  end
+
+  create_table "units", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "number", null: false
+    t.integer "type_number", null: false
+    t.integer "unit", null: false
+    t.boolean "bonus", default: false, null: false
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.integer "day", null: false
+    t.string "old_date"
+    t.string "rokuyou"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["day"], name: "index_units_on_day"
+    t.index ["month"], name: "index_units_on_month"
+    t.index ["number", "type_number", "unit"], name: "units_idx_unique", unique: true
+    t.index ["number", "type_number"], name: "target_units_idx"
+    t.index ["old_date"], name: "index_units_on_old_date"
+    t.index ["rokuyou"], name: "index_units_on_rokuyou"
+    t.index ["year"], name: "index_units_on_year"
   end
 
 end

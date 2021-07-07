@@ -1,3 +1,4 @@
+# docker-compose run spring rake scraping:exec
 namespace :scraping do
   desc "mizuhoをスクレイピング"
 
@@ -9,9 +10,9 @@ namespace :scraping do
     require 'capybara/poltergeist'
 
     Capybara.register_driver :poltergeist do |app|
-      Capybara::Poltergeist::Driver.new(app, {:js_errors => false, :timeout => 2000 })
+      Capybara::Poltergeist::Driver.new(app, {:js_errors => false, :timeout => 5000 })
     end
-    Capybara.default_max_wait_time = 10
+    Capybara.default_max_wait_time = 20
     session = Capybara::Session.new(:poltergeist)
     session.visit "https://www.mizuhobank.co.jp/retail/takarakuji/loto/backnumber/index.html"
 
@@ -34,7 +35,7 @@ namespace :scraping do
     # url= 1page, elm = n~n+19
     factory.unsave.each do |url, elms|
       session.visit url
-      logger.info url
+      logger.info "url:#{url}"
       rows = session.all(:xpath, '//table[contains(@class, "typeTK")]/tbody/tr')
 
       rows.each do |row|

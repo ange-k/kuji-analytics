@@ -1,3 +1,8 @@
+# number        :開催回
+# type_number   :くじ種別
+# result        :くじ結果
+# bonus_number  :ボーナスナンバー
+# date          :抽選日
 class Loto < ApplicationRecord
   def self.cnv_type_number(str)
     case str
